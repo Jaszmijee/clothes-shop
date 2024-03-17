@@ -5,12 +5,12 @@ import Button from "../Button/Button";
 import PropTypes from "prop-types";
 
 
-const ProductForm = ({title, getPrice, basePrice, colors, sizes, currentColor, currentSize, handleColorChange, handleSizeChange, handleAddToCart }) => {
+const ProductForm = ({title, price, colors, sizes, currentColor, currentSize, handleColorChange, handleSizeChange, handleAddToCart }) => {
     return (
         <form>
             <header>
                         <h2 className={styles.name}>{title}</h2>
-                        <span className={styles.price}>Price: {getPrice(basePrice, currentSize.additionalPrice)}$</span>
+                        <span className={styles.price}>Price: {price}$</span>
 
                     </header>
             <OptionSize
@@ -34,7 +34,7 @@ const ProductForm = ({title, getPrice, basePrice, colors, sizes, currentColor, c
 
 ProductForm.propTypes = {
     title: PropTypes.string.isRequired,
-    basePrice: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
     colors: PropTypes.arrayOf(PropTypes.string).isRequired,
     sizes: PropTypes.arrayOf(PropTypes.object).isRequired,
     currentColor: PropTypes.string.isRequired,
